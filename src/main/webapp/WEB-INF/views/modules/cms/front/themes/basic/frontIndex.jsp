@@ -13,7 +13,7 @@
 <link href="static/webos/css/core.css" rel="stylesheet" type="text/css">
 <link href="static/webos/css/index.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="static/webos/js/jquery.js"></script>
-<script type="text/javascript" src="static/webos/js/global.js"></script>
+<!-- <script type="text/javascript" src="static/webos/js/global.js"></script> -->
 <script type="text/javascript" src="static/webos/js/window.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
