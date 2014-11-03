@@ -71,7 +71,7 @@
 			</snapshots>
 		</repository> -->
 		
-		<repository>
+		<!-- <repository>
 			<id>central-repos</id>
 			<name>Central Repository</name>
 			<url>http://repo.maven.apache.org/maven2</url>
@@ -81,7 +81,7 @@
 			<id>central-repos2</id>
 			<name>Central Repository 2</name>
 			<url>http://repo1.maven.org/maven2/</url>
-		</repository>
+		</repository> -->
 		
 		<repository>
 			<id>springsource-repos</id>
@@ -167,9 +167,9 @@
         </dependency>
 		<!-- ERMaster end -->
 		<dependency>
-		   <groupId>bitwalker</groupId>
-		   <artifactId>UserAgentUtils</artifactId>
-		   <version>1.13</version>
+		    <groupId>eu.bitwalker</groupId>
+		    <artifactId>UserAgentUtils</artifactId>
+		    <version>1.14</version>
 		</dependency>
 		<dependency>
 		    <groupId>org.zeroturnaround</groupId>
