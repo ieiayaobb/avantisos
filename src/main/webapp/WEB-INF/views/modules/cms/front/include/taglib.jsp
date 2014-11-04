@@ -8,6 +8,8 @@
 <%@ taglib prefix="tags" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="cms" tagdir="/WEB-INF/tags/cms" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}${fns:getFrontPath()}"/>
+<c:set var="ctxAdmin" value="${pageContext.request.contextPath}${fns:getAdminPath()}"/>
+<c:set var="ctxRoot" value="${pageContext.request.contextPath}"/>
 <c:set var="ctxStatic" value="${pageContext.request.contextPath}/static"/>
 <c:set var="ctxStaticFront" value="${ctxStatic}/modules/cms/front"/>
 <c:set var="ctxStaticTheme" value="${ctxStaticFront}/themes/${site.theme}"/>

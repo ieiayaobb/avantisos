@@ -61,7 +61,7 @@
     <name>getMenuList</name>
     <function-class>com.thinkgem.jeesite.modules.sys.utils.UserUtils</function-class>
     <function-signature>java.util.List getMenuList()</function-signature>
-    <example>${fns:getMenuList()}</example>  
+    <example>${fns:getMenuList()}</example>
   </function>
   
   <function>
