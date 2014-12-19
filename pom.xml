@@ -55,7 +55,7 @@
 
 	<!-- 设定除中央仓库(repo1.maven.org/maven2/)外的其他仓库,按设定顺序进行查找. -->
 	<repositories>
-	
+
 		<!-- 如有Nexus私服, 取消注释并指向正确的服务器地址.
 		<repository>
 			<id>nexus-repos</id>
@@ -68,45 +68,45 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</repository> -->
-		
+
 		<!-- <repository>
 			<id>central-repos</id>
 			<name>Central Repository</name>
 			<url>http://repo.maven.apache.org/maven2</url>
 		</repository>
-		
+
 		<repository>
 			<id>central-repos2</id>
 			<name>Central Repository 2</name>
 			<url>http://repo1.maven.org/maven2/</url>
 		</repository> -->
-		
+
 		<repository>
 			<id>springsource-repos</id>
 			<name>SpringSource Repository</name>
 			<url>http://repo.springsource.org/libs-milestone-local</url>
 	    </repository>
-		
+
 		<repository>
 			<id>activiti-repos</id>
 			<name>Activiti Repository</name>
 			<url>https://maven.alfresco.com/nexus/content/groups/public</url>
 		</repository>
-		
+
 		<repository>
 			<id>activiti-repos2</id>
 			<name>Activiti Repository 2</name>
 			<url>https://app.camunda.com/nexus/content/groups/public</url>
 		</repository>
-		
-		<repository> 
-			<id>thinkgem-repos</id> 
+
+		<repository>
+			<id>thinkgem-repos</id>
 			<name>ThinkGem Repository</name>
 			<url>http://git.oschina.net/thinkgem/repos/raw/master</url>
 		</repository>
-		
-		<repository> 
-			<id>thinkgem-repos2</id> 
+
+		<repository>
+			<id>thinkgem-repos2</id>
 			<name>ThinkGem Repository 2</name>
 			<url>https://raw.github.com/thinkgem/repository/master</url>
 		</repository>
@@ -119,8 +119,8 @@
 		     <updatePolicy>always</updatePolicy>
 		   </snapshots>
 		</repository>
-		
-	</repositories>	
+
+	</repositories>
 	<pluginRepositories> 
 	
 		<!-- 如有Nexus私服, 取消注释并指向正确的服务器地址.
@@ -794,11 +794,6 @@
 					<artifactId>dbunit</artifactId>
 					<version>2.4.8</version>
 				</dependency>
-			  	<dependency>
-				    <groupId>org.apache.poi</groupId>
-				    <artifactId>poi</artifactId>
-				    <version>3.2-FINAL</version>
-				</dependency>
 			</dependencies>
 			<build>
 				<plugins>
@@ -872,7 +867,7 @@
 						<configuration>
 							<target>
 								<echo message="Code Generate" />
-								<java classname="com.thinkgem.jeesite.generate.Generate">
+								<java classname="com.avantis.os.generate.Generate">
 									<classpath refid="maven.runtime.classpath"/>
 								</java>
 							</target>
@@ -883,16 +878,5 @@
 		</profile>
 		
 	</profiles>
-	
-	<!-- 开发者信息 -->
-	<developers>  
-		<developer>
-			<id>thinkgem</id>
-			<name>WangZhen</name>
-			<email>thinkgem at 163.com</email>
-			<roles><role>Project lead</role></roles>
-			<timezone>+8</timezone>  
-		</developer>
-	</developers>
 	
 </project>
