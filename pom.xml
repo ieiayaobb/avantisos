@@ -794,6 +794,11 @@
 					<artifactId>dbunit</artifactId>
 					<version>2.4.8</version>
 				</dependency>
+				<dependency>
+					<groupId>org.apache.poi</groupId>
+					<artifactId>poi</artifactId>
+					<version>3.2-FINAL</version>
+				</dependency>
 			</dependencies>
 			<build>
 				<plugins>
@@ -812,7 +817,7 @@
 								
               				    <!-- mssql
 								<property name="dbunit.datatype" value="org.dbunit.ext.mssql.MsSqlDataTypeFactory" /> -->
-								
+
 								<property file="src/main/resources/avantisos.properties" />
                 				<sql driver="${jdbc.driver}" url="${jdbc.url}" userid="${jdbc.username}" password="${jdbc.password}" 
                 				    onerror="continue" encoding="${project.build.sourceEncoding}">
