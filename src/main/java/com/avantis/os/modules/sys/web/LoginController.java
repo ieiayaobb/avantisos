@@ -97,6 +97,11 @@ public class LoginController extends BaseController {
     public String test(HttpServletRequest request, HttpServletResponse response){
         return "modules/sys/default";
     }
+
+    @RequestMapping(value = "clock")
+    public String clock(HttpServletRequest request, HttpServletResponse response){
+        return "modules/sys/clock";
+    }
 	
 	/**
 	 * 获取主题方案

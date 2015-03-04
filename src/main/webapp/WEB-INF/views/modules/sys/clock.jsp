@@ -1,14 +1,14 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-        "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ include file="/WEB-INF/views/include/taglib.jsp"%>
 <html>
 <head>
     <title></title>
-    <link href="../../../../static/backbone/plugin/css/clock.css" rel="stylesheet" type="text/css">
-    <link href="../../../../static/webos/css/core.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="../../../../static/jquery/jquery-1.9.1.js"></script>
-    <script type="text/javascript" src="../../../../static/underscore/underscore.js" ></script>
-    <script type="text/javascript" src="../../../../static/backbone/backbone.js" ></script>
-    <script type="text/javascript" src="../../../../static/backbone/plugin/js/clock.js" ></script>
+    <link href="${ctxStatic}/backbone/plugin/css/clock.css" rel="stylesheet" type="text/css">
+    <link href="${ctxStatic}/webos/css/core.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="${ctxStatic}/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="${ctxStatic}/underscore/underscore.js" ></script>
+    <script type="text/javascript" src="${ctxStatic}/backbone/backbone.js" ></script>
+    <script type="text/javascript" src="${ctxStatic}/backbone/plugin/js/clock.js" ></script>
 
         <script type="text/template" id="clock-template">
         <div class="up-background up-back">
