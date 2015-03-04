@@ -185,6 +185,22 @@ body{font: 12px/1.5 Tahoma,'微软雅黑';*font-family:'微软雅黑';}
 .fence .fence-icon.ue-state-active .fence-icon-hd{background:url(../img/menu/fence/fence_icon_top_current.png) no-repeat left top;}
 .fence .fence-icon.ue-state-active .fence-icon-bd{background:url(../img/menu/fence/fence_icon_center_current.png) repeat-y left top;}
 .fence .fence-icon.ue-state-active .fence-icon-ft{background:url(../img/menu/fence/fence_icon_bottom_current.png) no-repeat left top;}
+
+.pluginGroup{ position:absolute; top:80px; right:10px;z-index:10;}
+.pluginGroup .plugin{ position:relative; margin-bottom:20px; width:231px;}
+.plugin .contentHd{ float:left; width:100%; height:31px; background:url(../img/menu/fence/content_hd.png)}
+.plugin .contentHd input[type=text]{float:left; border:none; height:18px; width:150px; margin:6px 0 0 4px; background:none; color:#fFF; border:none;}
+.plugin .contentHd .focus{ border:1px solid #8F7125 !important;}
+.plugin .contentHd .opGroup{ float:right; margin:8px 10px 0 0;}
+.plugin .contentHd .opGroup a{ margin-left:-4px;*margin-left:-1px;}
+.plugin .contentBd{ float:left; width:100%; min-height:100px; background:url(../img/menu/fence/content_bd.png); overflow:hidden;}
+.plugin .contentBd .item{ float:left; width:82px;}
+.plugin .contentBd .item img{ display:block; width:64px; margin:0 auto;}
+.plugin .contentBd .item .text{ float:left; width:100%; margin-top:-10px; color:#FFF; text-align:center;}
+.plugin .contentBd i{ display:block; margin:40px 0; text-align:center; color:#668083;}
+.plugin .contentFt{ float:left; width:100%; height:7px; background:url(../img/menu/fence/content_ft.png)}
+
+
 /****** 桌面图标样式 ******/
 /*桌面快捷方式*/
 .shortcutTray{position:absolute;top:0px;left:200px;right:10px;z-index:9;}

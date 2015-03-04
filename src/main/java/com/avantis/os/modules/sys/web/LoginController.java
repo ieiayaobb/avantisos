@@ -67,7 +67,7 @@ public class LoginController extends BaseController {
 		User user = UserUtils.getUser();
 		// 如果已经登录，则跳转到管理首页
 		if(user.getId() != null){
-			return "redirect:"+Global.getAdminPath();
+			return "redirect:" + Global.getAdminPath();
 		}
 		model.addAttribute(FormAuthenticationFilter.DEFAULT_USERNAME_PARAM, username);
 		model.addAttribute("isValidateCodeLogin", isValidateCodeLogin(username, true, false));
@@ -83,14 +83,20 @@ public class LoginController extends BaseController {
 		User user = UserUtils.getUser();
 		// 未登录，则跳转到登录页
 		if(user.getId() == null){
-			return "redirect:"+Global.getAdminPath()+"/login";
+			return "redirect:" + Global.getAdminPath() + "/login";
 		}
 		// 登录成功后，验证码计算器清零
 		isValidateCodeLogin(user.getLoginName(), false, true);
 		// 登录成功后，获取上次登录的当前站点ID
 		UserUtils.putCache("siteId", CookieUtils.getCookie(request, "siteId"));
-		return "modules/sys/sysIndex";
+//		return "modules/sys/sysIndex";
+		return "modules/sys/index";
 	}
+
+    @RequestMapping(value = "test")
+    public String test(HttpServletRequest request, HttpServletResponse response){
+        return "modules/sys/default";
+    }
 	
 	/**
 	 * 获取主题方案

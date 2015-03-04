@@ -8,6 +8,7 @@ package com.avantis.os.modules.sys.web;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.avantis.os.common.web.BaseController;
@@ -154,15 +155,35 @@ public class MenuController extends BaseController {
 		List<Map<String, Object>> mapList = Lists.newArrayList();
 		List<Menu> list = systemService.findAllMenu();
 		for (int i=0; i<list.size(); i++){
-			Menu e = list.get(i);
-			if (extId == null || (extId!=null && !extId.equals(e.getId()) && e.getParentIds().indexOf(","+extId+",")==-1)){
+			Menu menu = list.get(i);
+			if (extId == null || (extId!=null && !extId.equals(menu.getId()) && menu.getParentIds().indexOf(","+extId+",")==-1)){
 				Map<String, Object> map = Maps.newHashMap();
-				map.put("id", e.getId());
-				map.put("pId", e.getParent()!=null?e.getParent().getId():0);
-				map.put("name", e.getName());
+				map.put("id", menu.getId());
+				map.put("pId", menu.getParent()!=null?menu.getParent().getId():0);
+				map.put("name", menu.getName());
+                map.put("href", menu.getHref());
 				mapList.add(map);
 			}
 		}
 		return mapList;
 	}
+
+    @RequiresUser
+    @ResponseBody
+    @RequestMapping(value = "allFunctionalMenus")
+    public List<Map<String, Object>> getAllFunctionalMenus(HttpServletRequest request, HttpServletResponse response){
+        response.setContentType("application/json; charset=UTF-8");
+        List<Map<String, Object>> mapList = Lists.newArrayList();
+        List<Menu> list = systemService.findAllMenu(true);
+        for (int i=0; i<list.size(); i++){
+            Menu menu = list.get(i);
+            Map<String, Object> map = Maps.newHashMap();
+            map.put("id", menu.getId());
+            map.put("pId", menu.getParent()!=null?menu.getParent().getId():0);
+            map.put("name", menu.getName());
+            map.put("href", menu.getHref());
+            mapList.add(map);
+        }
+        return mapList;
+    }
 }

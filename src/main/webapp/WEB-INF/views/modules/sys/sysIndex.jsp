@@ -89,7 +89,7 @@
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript"> 
+	<script type="text/javascript">
 		var leftWidth = "160"; // 左侧窗口大小
 		function wSize(){
 			var minHeight = 500, minWidth = 980;

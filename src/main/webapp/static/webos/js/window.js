@@ -21,12 +21,6 @@ var Desk = function(maxFenceIconNum){
 			eachNum = parseInt($(".shortcutTray").height() / eachHeight,10);
 			_adjustPosition();
 		});
-		$(".zoom").live("mousedown",function(){
-			$(this).addClass("active");
-		});
-		$(".zoom").live("mouseup",function(){
-			$(this).removeClass("active");
-		});
 		$(".normalState").click(function(){
 			$(".normalState").hide();
 			$(".expandState").show();
@@ -86,11 +80,7 @@ var Desk = function(maxFenceIconNum){
 			}
 			
 		});
-		//桌面图标的激活样式
-		$(".desk-icon,.fence-icon").live("click",function(){
-			$(".desk-icon,.fence-icon").removeClass("ue-state-active");
-			$(this).addClass("ue-state-active");
-		});
+
 		//菜单的点击事件
 		$(".menuItem").click(function(){
 			$(".menuItem").removeClass("ue-state-active");
@@ -105,12 +95,12 @@ var Desk = function(maxFenceIconNum){
 		$(".toolChoose .closeWindow").click(function(){
 			$(".toolChoose").hide();
 		});
-		$(".title_icon").live("mousedown",function(){
-			$(this).addClass("active");
-		});
-		$(".title_icon").live("mouseup",function(){
-			$(this).removeClass("active");
-		});
+		//$(".title_icon").live("mousedown",function(){
+		//	$(this).addClass("active");
+		//});
+		//$(".title_icon").live("mouseup",function(){
+		//	$(this).removeClass("active");
+		//});
 		$(".toolChoose .itemPanel").click(function(){
 			$(this).find(".ico").toggle();
 		});
@@ -123,11 +113,11 @@ var Desk = function(maxFenceIconNum){
 			$(".toolChoose").addClass("miniToolChoose");
 			$(".historyCut").addClass("miniHistoryCut").hide();
 			$(".smallState").show();
-		
+
 			$(".logo_bottom").before(_createWindow(_getObjByModuleId($(this).attr("moduleId")).src,$(this).children().children(".text").text(),$(this).attr("moduleId"),frameId++));
-			
+
 			$(".iframeClass").click(function(){alert(1)})
-			
+
 			$(".frames").height($(window).height() - 20);
 			$(".frames .contentBd").height($(window).height() - 55);
 		});
@@ -294,11 +284,6 @@ var Desk = function(maxFenceIconNum){
 		  * 左侧导航栏 绑定滑屏操作
 		  */
 		$(".switchPanel>div").bind("click", _switchScreen);
-		
-		/**
-		  * 绑定小工具滑屏操作
-		  */
-/*拆*/	$(".toolArea>.page").bind("click",_switchTool);
 		
 		//点击起始的index
 		var startIndex;
@@ -788,37 +773,6 @@ var Desk = function(maxFenceIconNum){
 		}
 	}
 	/**
-	  * 小工具划屏方法
-	  */
-	function _switchTool(event){
-		if(!$(this).hasClass("disable")){
-			if($(event.target).index() == 0){
-				currentToolIndex--;
-			}else if($(event.target).index() == 1){
-				currentToolIndex++;
-			}
-			//解绑绑定事件
-			$(".toolArea>.page").unbind("click", _switchTool);
-			$(".toolArea .midPart .contentBd div").each(function(i){
-				var originLeft = $(this).offset().left;
-				$(this).animate({
-					left : toolWrapDis * (i - currentToolIndex)
-				}, 500);
-			});
-			setTimeout(function(){$(".toolArea>.page").bind("click", _switchTool);},500);
-			if(currentToolIndex == 0){
-				$(".toolArea>.pageLeft").addClass("disable");
-			}else{
-				$(".toolArea>.pageLeft").removeClass("disable");
-			}
-			if(currentToolIndex == maxToolIndex){
-				$(".toolArea>.pageRight").addClass("disable");
-			}else{
-				$(".toolArea>.pageRight").removeClass("disable");
-			}
-		}
-	}
-	/**
 	  * 生成Fence图标
 	  * @Param sequence_ 序列值
 	  * @Param imgSrc_ 图标路径
@@ -916,70 +870,6 @@ var Desk = function(maxFenceIconNum){
 		'</div>'
 		return $(fence);
 	}
-	/**
-	  * 生成小工具列表
-	  * @Param toolArray_ 小工具数组
-	  */
-	/*function _createToolWrap(toolArray_){
-		var toolWrapNum = parseInt(toolArray_.length / 6,10);
-		var $contentBd = $('<div class="contentBd"></div>');
-		for(var i = 0;i < toolWrapNum;i++){
-			var $toolWrap = $('<div class="toolWrap" style="left:' + i * 150 + 'px;"></div>');
-			for(var j = 0;j < 6;j++){
-				var $item = $('<a class="item ue-state-default">'+
-					'<span class="toolIcon ' + toolArray_[i * 6 + j].icon + '"></span>'+
-					'<span class="textHide">' + toolArray_[i * 6 + j].label + '</span>'+
-				'</a>');
-				$toolWrap.append($item);
-			}
-			$contentBd.append($toolWrap);
-		}
-		if(toolArray_.length - toolWrapNum * 6 > 0){
-			var $toolWrap = $('<div class="toolWrap" style="left:' + toolWrapNum * 150 + 'px;"></div>');
-			for(var j = 0;j < toolArray_.length - toolWrapNum * 6;j++){
-				var $item = $('<a class="item ue-state-default">'+
-					'<span class="toolIcon ' + toolArray_[toolWrapNum * 6 + j].icon + '"></span>'+
-					'<span class="textHide">' + toolArray_[toolWrapNum * 6 + j].label + '</span>'+
-				'</a>');
-				$toolWrap.append($item);
-			}
-			$contentBd.append($toolWrap);
-		}
-		maxToolIndex = toolWrapNum;
-		return $contentBd;
-	}*/
-	/**
-	  * 生成mini小工具列表
-	  * @Param toolArray_ 小工具数组
-	  */
-	/*function _createToolMiniWrap(toolArray_){
-		var toolMiniWrapNum = parseInt(toolArray_.length / 3,10);
-		var $contentBd = $('<div class="contentBd"></div>');
-		for(var i = 0;i < toolMiniWrapNum;i++){
-			var $toolMiniWrap = $('<div class="toolMiniWrap" style="left:' + i * 70 + 'px;"></div>');
-			for(var j = 0;j < 3;j++){
-				var $item = $('<a class="item ue-state-default">'+
-					'<span class="toolIcon ' + toolArray_[i * 3 + j].icon + '"></span>'+
-					'<span class="textHide">' + toolArray_[i * 3 + j].label + '</span>'+
-				'</a>');
-				$toolMiniWrap.append($item);
-			}
-			$contentBd.append($toolMiniWrap);
-		}
-		if(toolArray_.length - toolMiniWrapNum * 3 > 0){
-			var $toolMiniWrap = $('<div class="toolMiniWrap" style="left:' + toolMiniWrapNum * 70 + 'px;"></div>');
-			for(var j = 0;j < toolArray_.length - toolMiniWrapNum * 3;j++){
-				var $item = $('<a class="item ue-state-default">'+
-					'<span class="toolIcon ' + toolArray_[toolMiniWrapNum * 3 + j].icon + '"></span>'+
-					'<span class="textHide">' + toolArray_[toolMiniWrapNum * 3 + j].label + '</span>'+
-				'</a>');
-				$toolMiniWrap.append($item);
-			}
-			$contentBd.append($toolMiniWrap);
-		}	
-		maxToolIndex = toolMiniWrapNum;
-		return $contentBd;
-	}*/
 	function _createShortcut(moduleId_,frameTitle_,frameId_){
 		var shortcut = '<li moduleid=' + moduleId_ + ' frameId="' + frameId_ + '">'+
 			'<div class="imgWrap">'+
@@ -1157,9 +1047,6 @@ var Desk = function(maxFenceIconNum){
 		_adjustFencePosition();
 		$(obj).trigger("onDeskLoad");
 	}
-	/*function _initTool(toolArr_){
-		$(".toolArea .midPart").append(_createToolMiniWrap(toolArr_));
-	}*/
 	function _ArrContainEle(targetArr,element){
 		for(var i = 0;i < targetArr.length;i++){
 			if(targetArr[i] == element){
@@ -1168,8 +1055,8 @@ var Desk = function(maxFenceIconNum){
 		}
 		return false;
 	}
-	//··根据栏序号返回栏对象（从栏数组中）   若此方法只使用一次，可归结到调用函数中
-/*拆*/	function _ArrDeleteEle(targetArr,element){
+	// 根据栏序号返回栏对象（从栏数组中）   若此方法只使用一次，可归结到调用函数中
+	function _ArrDeleteEle(targetArr,element){
 		var tempArr = new Array();
 		for(var i = 0;i < targetArr.length;i++){
 			if(targetArr[i] != element){
@@ -1187,10 +1074,6 @@ var Desk = function(maxFenceIconNum){
 			obj = this;
 			_initDesk(iconArr_);
 		},
-		/*initTool : function(toolArr_){
-			_toolArr = toolArr_
-			_initTool(toolArr_);
-		},*/
 		getIconArr : function(){
 			return _getIconArr();
 		},

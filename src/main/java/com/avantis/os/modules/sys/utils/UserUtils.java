@@ -110,18 +110,19 @@ public class UserUtils extends BaseService {
 		}
 		return list;
 	}
-	
-	public static List<Menu> getMenuList(){
-		@SuppressWarnings("unchecked")
+    public static List<Menu> getMenuList(){
+        return getMenuList(false);
+    }
+	public static List<Menu> getMenuList(Boolean isFunctional){
 		List<Menu> menuList = (List<Menu>)getCache(CACHE_MENU_LIST);
 		if (menuList == null){
 			User user = getUser();
-			if (user.isAdmin()){
-				menuList = menuDao.findAllList();
-			}else{
-				menuList = menuDao.findByUserId(user.getId());
-			}
-			putCache(CACHE_MENU_LIST, menuList);
+            if(isFunctional) {
+                menuList = menuDao.findByUserIdWithFunction(user.getId());
+            }else{
+                menuList = menuDao.findByUserId(user.getId());
+            }
+//			putCache(CACHE_MENU_LIST, menuList);
 		}
 		return menuList;
 	}

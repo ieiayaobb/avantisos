@@ -239,8 +239,11 @@ public class SystemService extends BaseService  {
 		return menuDao.get(id);
 	}
 
-	public List<Menu> findAllMenu(){
-		return UserUtils.getMenuList();
+    public List<Menu> findAllMenu(){
+        return UserUtils.getMenuList(false);
+    }
+	public List<Menu> findAllMenu(Boolean isFunctiona){
+		return UserUtils.getMenuList(isFunctiona);
 	}
 	
 	@Transactional(readOnly = false)

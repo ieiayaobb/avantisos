@@ -90,7 +90,7 @@ public class LeaveController extends BaseController {
 		return "redirect:"+Global.getAdminPath()+"/oa/leave/";
 	}
 
-	@RequiresPermissions("oa:leave:view")
+//	@RequiresPermissions("oa:leave:view")
 	@RequestMapping(value = {"list/task", ""})
 	public String listTask(Leave leave, HttpServletRequest request, HttpServletResponse response, Model model) {
 		Page<Leave> page = leaveService.findTodoTasks(new Page<Leave>(request, response), leave); 
