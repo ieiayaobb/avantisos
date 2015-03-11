@@ -112,7 +112,7 @@
 
     <beans profile="prod">
         <!-- 加载配置属性文件 -->
-        <context:property-placeholder ignore-unresolvable="true" location="classpath*:/avantisos_dev.properties" />
+        <context:property-placeholder ignore-unresolvable="true" location="classpath*:/avantisos_prod.properties" />
     </beans>
 	
 </beans>
