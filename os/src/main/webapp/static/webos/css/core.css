@@ -1,0 +1,56 @@
+﻿@charset "utf-8";
+/*css reset*/
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td , i,figure,hr{
+	margin:0;
+	padding:0;
+	border:0;
+	font-weight:inherit;
+	font-style:inherit;
+	font-size:100%;
+	font-family:inherit;
+	vertical-align:baseline;
+}
+body {line-height:1.5;background-color:transparent;font: 12px/1.5 Tahoma,'宋体';*font-family:'宋体';color:#3C3C3C;}
+table {border-collapse: collapse;border-spacing:0;}
+caption, th, td ,b,strong{text-align:left;font-weight:normal;}
+table, td, th {vertical-align:middle;}	
+blockquote:before, blockquote:after, q:before, q:after {content:"";}
+blockquote, q {quotes:"" "";}
+a img {border:none;}
+em,cite,i{font-style:normal;}
+
+h1, h2, h3, h4, h5, h6 {font-weight:normal;}
+a {text-decoration:none;cursor:pointer;}
+dl, dt, dd, ol, ul, li{ list-style:none;}
+
+/*clear*/
+.ue-clear:after{content: ".";display:block;height:0;clear:both;visibility:hidden;}
+.ue-clear{display:inline-block;}
+*html .ue-clear{height:1%;}
+.ue-clear{display:block;}
+
+/*----------------------------------*
+ * 	a的通用样式          				*
+ *----------------------------------*/
+a{color:#005E91;}
+a.important{color:#005E91 !important;}
+a:hover{color:#267A01 !important;text-decoration:underline;}
+/*
+a:visited{color:#800080;}
+a:active{color:#267A01;}*/
+
+/*----------------------------------*
+ * 	文字相关的公共类         				*
+ *----------------------------------*/
+/*重要信息的文字颜色*/
+.impInfo{color:#cd0000 !important;}
+.impInfoMore{color:#cd0000;font-weight:bold;}
+/*非重要文字（5个程度）*/
+.ue-text-level1{color:#3c3c3c;}
+.ue-text-level2{color:#666666;}
+.ue-text-level3{color:#888888;}
+.ue-text-level4{color:#afafaf;}
+.ue-text-level5{color:#c5c5c5;}
+/***** 宽度限制 *****/
+.ue-width-limit{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+
