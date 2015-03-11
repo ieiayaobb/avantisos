@@ -23,7 +23,7 @@ CREATE TABLE sys_area
 (
 	id varchar(64) NOT NULL COMMENT '编号',
 	parent_id varchar(64) NOT NULL COMMENT '父级编号',
-	parent_ids varchar(2000) NOT NULL COMMENT '所有父级编号',
+	parent_ids varchar(255) NOT NULL COMMENT '所有父级编号',
 	code varchar(100) COMMENT '区域编码',
 	name varchar(100) NOT NULL COMMENT '区域名称',
 	type char(1) COMMENT '区域类型',
@@ -75,7 +75,7 @@ CREATE TABLE sys_mdict
 (
 	id varchar(64) NOT NULL COMMENT '编号',
 	parent_id varchar(64) NOT NULL COMMENT '父级编号',
-	parent_ids varchar(2000) NOT NULL COMMENT '所有父级编号',
+	parent_ids varchar(255) NOT NULL COMMENT '所有父级编号',
 	name varchar(100) NOT NULL COMMENT '角色名称',
 	description varchar(100) COMMENT '描述',
 	sort int COMMENT '排序（升序）',
@@ -93,7 +93,7 @@ CREATE TABLE sys_menu
 (
 	id varchar(64) NOT NULL COMMENT '编号',
 	parent_id varchar(64) NOT NULL COMMENT '父级编号',
-	parent_ids varchar(2000) NOT NULL COMMENT '所有父级编号',
+	parent_ids varchar(255) NOT NULL COMMENT '所有父级编号',
 	name varchar(100) NOT NULL COMMENT '菜单名称',
 	href varchar(255) COMMENT '链接',
 	target varchar(20) COMMENT '目标',
@@ -116,7 +116,7 @@ CREATE TABLE sys_office
 (
 	id varchar(64) NOT NULL COMMENT '编号',
 	parent_id varchar(64) NOT NULL COMMENT '父级编号',
-	parent_ids varchar(2000) NOT NULL COMMENT '所有父级编号',
+	parent_ids varchar(255) NOT NULL COMMENT '所有父级编号',
 	area_id varchar(64) NOT NULL COMMENT '归属区域',
 	code varchar(100) COMMENT '区域编码',
 	name varchar(100) NOT NULL COMMENT '机构名称',

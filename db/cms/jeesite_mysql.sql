@@ -58,7 +58,7 @@ CREATE TABLE cms_category
 	site_id varchar(64) DEFAULT '1' COMMENT '站点编号',
 	office_id varchar(64) COMMENT '归属机构',
 	parent_id varchar(64) NOT NULL COMMENT '父级编号',
-	parent_ids varchar(2000) NOT NULL COMMENT '所有父级编号',
+	parent_ids varchar(255) NOT NULL COMMENT '所有父级编号',
 	module varchar(20) COMMENT '栏目模块',
 	name varchar(100) NOT NULL COMMENT '栏目名称',
 	image varchar(255) COMMENT '栏目图片',
