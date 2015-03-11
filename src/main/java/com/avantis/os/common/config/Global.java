@@ -27,7 +27,7 @@ public class Global {
 	/**
 	 * 属性文件加载对象
 	 */
-	private static PropertiesLoader propertiesLoader = new PropertiesLoader("avantisos_dev.properties");
+	private static PropertiesLoader propertiesLoader = new PropertiesLoader("avantisos_prod.properties");
 	
 	/**
 	 * 获取配置

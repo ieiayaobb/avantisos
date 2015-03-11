@@ -7,9 +7,6 @@
     
     <description>Spring MVC Configuration</description>
     
-    <!-- 加载配置属性文件 -->
-	<context:property-placeholder ignore-unresolvable="true" location="classpath*:/avantisos_dev.properties" />
-	
 	<!-- 使用Annotation自动注册Bean,只扫描@Controller -->
 	<context:component-scan base-package="com.avantis.os" use-default-filters="false"><!-- base-package 如果多个，用“,”分隔 -->
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
@@ -99,4 +96,15 @@
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">  
         <property name="maxUploadSize" value="${web.maxUploadSize}" />  
     </bean>
+
+    <!-- dev 环境 -->
+    <beans profile="dev">
+        <!-- 加载配置属性文件 -->
+        <context:property-placeholder ignore-unresolvable="true" location="classpath*:/avantisos_dev.properties" />
+    </beans>
+
+    <beans profile="prod">
+        <!-- 加载配置属性文件 -->
+        <context:property-placeholder ignore-unresolvable="true" location="classpath*:/avantisos_prod.properties" />
+    </beans>
 </beans>

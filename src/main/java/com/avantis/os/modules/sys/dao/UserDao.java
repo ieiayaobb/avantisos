@@ -9,6 +9,7 @@ import java.util.Date;
 import java.util.List;
 
 import com.avantis.os.common.persistence.BaseDao;
+import com.avantis.os.common.persistence.CrudDao;
 import com.avantis.os.modules.sys.entity.User;
 import org.springframework.stereotype.Repository;
 
@@ -22,7 +23,7 @@ import com.avantis.os.modules.sys.entity.User;
  * @version 2013-8-23
  */
 @Repository
-public class UserDao extends BaseDao<User> {
+public class UserDao extends CrudDao<User> {
 	
 	public List<User> findAllList() {
 		return find("from User where delFlag=:p1 order by id", new Parameter(User.DEL_FLAG_NORMAL));
