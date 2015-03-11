@@ -13,7 +13,7 @@
 	<description>Spring Configuration</description>
 	
     <!-- 加载配置属性文件 -->
-	<context:property-placeholder ignore-unresolvable="true" location="classpath*:/avantisos.properties" />
+	<context:property-placeholder ignore-unresolvable="true" location="classpath*:/avantisos_dev.properties" />
 	
  	<!-- MyBatis begin -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
