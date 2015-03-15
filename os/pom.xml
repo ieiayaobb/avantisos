@@ -822,7 +822,6 @@
                                 <!-- mssql
                               <property name="dbunit.datatype" value="org.dbunit.ext.mssql.MsSqlDataTypeFactory" /> -->
 
-                                <property file="src/main/resources/avantisos.properties" />
                                 <property file="src/main/resources/dataSource_dev.properties" />
                                 <sql driver="${jdbc.driver}" url="${jdbc.url}" userid="${jdbc.username}" password="${jdbc.password}"
                                      onerror="continue" encoding="${project.build.sourceEncoding}">
