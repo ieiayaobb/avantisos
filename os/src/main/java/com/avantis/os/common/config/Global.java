@@ -30,7 +30,7 @@ public class Global {
 	/**
 	 * 属性文件加载对象
 	 */
-	private static PropertiesLoader propertiesLoader = new PropertiesLoader("dataSource_dev.properties");
+	private static PropertiesLoader propertiesLoader = new PropertiesLoader("avantisos.properties");
 	
 	/**
 	 * 获取当前对象实例
