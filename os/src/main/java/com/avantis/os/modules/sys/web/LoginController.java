@@ -153,8 +153,9 @@ public class LoginController extends BaseController {
 		isValidateCodeLogin(user.getLoginName(), false, true);
 		// 登录成功后，获取上次登录的当前站点ID
 		UserUtils.putCache("siteId", CookieUtils.getCookie(request, "siteId"));
+		return "modules/sys/index";
 //		return "modules/sys/sysIndex";
-        return "redirect:" +  Global.getAdminPath() + "/prod/list";
+//        return "redirect:" +  Global.getAdminPath() + "/prod/list";
 	}
 
     @RequestMapping(value = "test")
