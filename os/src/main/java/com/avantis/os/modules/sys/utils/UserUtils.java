@@ -151,13 +151,9 @@ public class UserUtils {
 		List<Menu> menuList = (List<Menu>)getCache(CACHE_MENU_LIST);
 		if (menuList == null){
 			User user = getUser();
-			if (user.isAdmin()){
-				menuList = menuDao.findAllList(new Menu());
-			}else{
-				Menu m = new Menu();
-				m.setUserId(user.getId());
-				menuList = menuDao.findByUserId(m);
-			}
+            Menu menu = new Menu();
+            menu.setUserId(user.getId());
+            menuList = menuDao.findByUserId(menu);
 			putCache(CACHE_MENU_LIST, menuList);
 		}
 		return menuList;
