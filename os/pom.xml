@@ -98,23 +98,6 @@
 
     <!-- 依赖项定义 -->
     <dependencies>
-        <!-- ERMaster begin -->
-        <dependency>
-            <groupId>org.eclipse</groupId>
-            <artifactId>swt</artifactId>
-            <version>3.3.0-v3346</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse</groupId>
-            <artifactId>draw2d</artifactId>
-            <version>3.2.100-v20070529</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse</groupId>
-            <artifactId>jface</artifactId>
-            <version>3.3.0-I20070606-0010</version>
-        </dependency>
-        <!-- ERMaster end -->
         <dependency>
             <groupId>eu.bitwalker</groupId>
             <artifactId>UserAgentUtils</artifactId>
@@ -790,7 +773,7 @@
         <profile>
             <id>dev</id>
             <properties>
-                <profiles.active>dev</profiles.active>
+                <spring.profiles.active>dev</spring.profiles.active>
             </properties>
             <dependencies>
                 <dependency>
@@ -865,7 +848,7 @@
         <profile>
             <id>prod</id>
             <properties>
-                <profiles.active>prod</profiles.active>
+                <spring.profiles.active>prod</spring.profiles.active>
             </properties>
             <dependencies>
                 <dependency>
