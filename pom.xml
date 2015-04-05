@@ -43,7 +43,7 @@
 
 
         <dozer.version>5.4.0</dozer.version>
-        <poi.version>3.9</poi.version>
+        <poi.version>3.2-Final</poi.version>
         <freemarker.version>2.3.19</freemarker.version>
 
         <!-- jdbc driver setting -->
